@@ -1,6 +1,6 @@
 
 //Julia Maxwell JQuery hw
-// I worked with Mike Payne and Mark Ramirez on this homework. I didn't have time to finish no 5 because of so much other hw :(
+// I worked with Mike Payne and Mark Ramirez on this homework. Ben Sutton also helped me figure out a GitHub difficulty.
 
 
 $(document).ready(function() {
