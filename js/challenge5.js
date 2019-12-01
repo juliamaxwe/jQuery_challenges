@@ -1,44 +1,17 @@
-
-console.log("here")
-var msg = "Hover over an Image Below"
-$("img").mouseover(function(){
-	console.log("mouse over")
-	$("#image").css("backgroundImage", "url('"+$(this).attr("src")+"')");
+var msg = "Hover over an Image Below" //create a message variable that's displayed on the page
+$("img").mouseover(function(){ //when a mouse moves over an image html element do the following
+	$("#image").css("backgroundImage", "url('"+$(this).attr("src")+"')"); //change whatever the image id is for the moused over image use the background image CSS property, and set the src HTML attribute to be the place that supplies the actual image for the value of the property
+	$("#image").html($(this).attr("alt")) //also display the html alt tag on the image
+})
+$("img").mouseleave(function(){ //when the mouse leaves the image, do the following
+	$("#image").css("backgroundImage", ""); //change the background image to be nothing (will display the color set in the css code)
+	$("#image").html(msg); //display the message variable set above
+})
+$("img").focus(function(){ //when the mouse focuses (clicks) on the image element
+	$("#image").css("backgroundImage", "url('"+$(this).attr("src")+"')"); //do the same as above with the mouseover
 	$("#image").html($(this).attr("alt"))
 })
-$("img").mouseleave(function(){
-	console.log("mouse leave")
-	$("#image").css("backgroundImage", "");
-	$("#image").html(msg);
+$("img").blur(function(){ //when the mouse leaves the image, do the following
+	$("#image").css("backgroundImage", ""); //change the background image to be nothing (will display the color set in the css code)
+	$("#image").html(msg); //display the message variable set above
 })
-$("img").focus(function(){
-	console.log("focus")
-	$("#image").css("backgroundImage", "url('"+$(this).attr("src")+"')");
-	$("#image").html($(this).attr("alt"))
-})
-
-//
-
-// // var imgs = document.querySelectorAll("img");
-// // var msg = "Hover over an image below."
-// // for (let i = 0; i < imgs.length;i++){
-// // 	imgs[i].onmouseover = function() {
-// // 	 	document.querySelector('#image').style.backgroundImage="url('"+imgs[i].src+"')";
-// // 	 	document.querySelector('#image').innerHTML= imgs[i].alt;
-// // 	 }
-//
-// 	 imgs[i].onfocus = function() {
-// 	 	document.querySelector('#image').style.backgroundImage="url('"+imgs[i].src+"')";
-// 	 	document.querySelector('#image').innerHTML= imgs[i].alt;
-// 	 }
-//
-// 	 imgs[i].onmouseleave = function() {
-// 	 	document.querySelector('#image').style.backgroundImage="url('')";
-// 	 	document.querySelector('#image').innerHTML= msg;
-// 	 }
-//
-// 	 imgs[i].onblur = function() {
-// 	 	document.querySelector('#image').style.backgroundImage="url('')";
-// 	 	document.querySelector('#image').innerHTML= msg;
-// 	 }
-// }
